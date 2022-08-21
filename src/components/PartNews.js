@@ -71,7 +71,7 @@ const PartNews = ({data}) => {
                 <Typography className={classes.text} >want to read more ?</Typography>
                 {/* <Button size='small' variant='contained' className={classes.button}> */}
 
-                    <Link to={`/news/${data.id}`} className={classes.link}>clicck</Link>
+                    <Link to={`/news/${data.id}`} className={classes.link}>cliccck</Link>
 
                 {/* </Button> */}
             </div>
