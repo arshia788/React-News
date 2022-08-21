@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Navbar from './components/Nabvar';
+import Landing from './components/Landing';
+import ItemProvider from './context/ItemProvider';
+import Detail from './components/Detail';
+
+
+
+const App = () => {
+
+    return (
+        <div>
+            <ItemProvider>
+
+                    <Navbar>
+
+                        <Switch>
+                            <Route path='/news/:id' component={Detail}/>    
+                            <Route path='/news/:id' component={Detail}/>    
+                            <Route exact path='/news' component={Landing}/> 
+                            <Redirect to='/news'/>
+                        </Switch>  
+
+                    </Navbar>
+                    
+            </ItemProvider>
+
+        </div>
+    );
+};
 
 export default App;
